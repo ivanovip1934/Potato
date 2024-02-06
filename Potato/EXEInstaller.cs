@@ -82,14 +82,12 @@ namespace POTATO
                         Environment.Exit(0);
                         break;
                     default:
-                        EventLog?.Invoke(this, new InstallEvent($"Event: ошибка № {numuninst} при удалении программы", ResultJob.ErrorUninstall));
+                        EventLog?.Invoke(this, new InstallEvent($"Event: ошибка N {numuninst} при удалении программы", ResultJob.ErrorUninstall));
                         Environment.Exit(0);
                         break;
                 }
             }
 
-
         }
-
     }
 }

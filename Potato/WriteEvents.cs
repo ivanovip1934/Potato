@@ -9,8 +9,8 @@ namespace POTATO
     {
 
         private string pathToDirLog;
-        public WriteEvents(string pathToDirLog) {
-            this.pathToDirLog = pathToDirLog;
+        public WriteEvents(string PathToDirLog) {
+            this.pathToDirLog = PathToDirLog;
         }
         
         public void WriteLog(object sender, InstallEvent e) {
@@ -40,7 +40,7 @@ namespace POTATO
                 }
                 catch (Exception expException){
                     Console.WriteLine(expException.Message);
-                    Environment.Exit(0);
+                    Environment.Exit(1);
                 }
 
             #endregion
@@ -72,10 +72,9 @@ namespace POTATO
             {
                 while (ServiceClass.IsLocked(tmpFileLog))
                     Thread.Sleep(3000);
+                File.Copy(tmpFileLog, fileNameLog, true);
+                File.Delete(tmpFileLog);
             }
-            File.Copy(tmpFileLog, fileNameLog,true);
-            File.Delete(tmpFileLog);
         }
-
     }
 }

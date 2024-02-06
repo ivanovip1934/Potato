@@ -23,10 +23,10 @@ namespace POTATO
         public string Property { get; private protected set; }
         public string UninstallPropertyEXE { get; private protected set; } 
         public bool NeedEXELog { get; private protected set; }
+        public string PathToTempFileLog { get; private protected set; }
 
         private protected Random rnd;
         private protected Dictionary<string, string> ptrnnames;
-        public string PathToTempFileLog { get; private protected set; }
 
         public event EventHandler<InstallEvent> EventLog;
 
